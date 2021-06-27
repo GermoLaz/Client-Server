@@ -14,7 +14,7 @@ public class Server {
         this.portNumber = portNumber;
     }
 
-    public void startConversation() throws IOException {
+    public void run() throws IOException {
         ServerSocket serverSocket = new ServerSocket(portNumber);
         while (true){
             //espera se conecte algun cliente

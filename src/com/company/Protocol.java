@@ -7,6 +7,8 @@ public class Protocol {
             return "";
         if(input.equals("ola"))
             return "Ola ke ace";
+        if(input.equals("x"))
+            return "chua brodi";
         return output;
     }
 }
