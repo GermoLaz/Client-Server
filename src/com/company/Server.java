@@ -38,8 +38,10 @@ public class Server {
                         while ((inputLine = in.readLine()) != null) {
                             outputLine = protocol.input(inputLine);
                             out.println(outputLine);
-                            if (inputLine.equals("x") || outputLine.equals("x"))
+                            if (inputLine.equals("x") || outputLine.equals("x")){
+
                                 break;
+                            }
                         }
                     }
                 }catch (IOException e){
