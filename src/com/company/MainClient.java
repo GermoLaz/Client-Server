@@ -14,7 +14,7 @@ public class MainClient {
         try {
             client.run();
         }catch (IOException e){
-            System.out.println(e.getMessage());
+            System.out.println("Le pifiaste al host o al puerto bro");
         }
     }
 }

@@ -32,12 +32,12 @@ public class Protocol {
 
     public String input(String input) {
 
+        if (input == null)
+            return "Que onda bro";
+
         if (reponse.containsKey(input.toUpperCase())) {
 
             return reponse.get(input) + "\n";
-
-        } else if (input.equals("")) {
-            return "";
 
         } else {
             if (Math.random()*6 < 3)

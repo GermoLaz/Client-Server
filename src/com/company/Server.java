@@ -32,7 +32,7 @@ public class Server {
 
                         // Initiate conversation with client
                         Protocol protocol = new Protocol();
-                        outputLine = protocol.input("");//-> recibo un string y devuelvo un string
+                        outputLine = protocol.input(null);//-> recibo un string y devuelvo un string
                         out.println(outputLine);
 
                         while ((inputLine = in.readLine()) != null) {

@@ -16,29 +16,27 @@ public class Client {
         this.portNumber = portNumber;
     }
     public void run() throws IOException {
-        try (
-                Socket socket = new Socket(hostName, portNumber);
-                PrintWriter out = new PrintWriter(socket.getOutputStream(), true);
-                BufferedReader in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
-                BufferedReader systemIn = new BufferedReader(new InputStreamReader(System.in))
-        ) {
-            String inputLine, outputLine;
+        Socket socket = new Socket(hostName, portNumber);
+        PrintWriter out = new PrintWriter(socket.getOutputStream(), true);
+        BufferedReader in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
+        BufferedReader systemIn = new BufferedReader(new InputStreamReader(System.in));
 
-            while ((inputLine = in.readLine()) != null) {
+        String inputLine, outputLine;
+
+        while ((inputLine = in.readLine()) != null) {
+            System.out.println("Server: " + inputLine);
+            outputLine = systemIn.readLine();
+
+            if (outputLine != null) {
+                out.println(outputLine);
+            }
+
+            if (outputLine.equals("x")) {
+                inputLine = in.readLine();
                 System.out.println("Server: " + inputLine);
-                outputLine = systemIn.readLine();
-
-                if (outputLine != null) {
-                    System.out.println("Client: " + outputLine);
-                    out.println(outputLine);
-                }
-
-                if (outputLine != null && (outputLine.equals("x") || outputLine.equals("X"))) {
-                    inputLine = in.readLine();
-                    System.out.println("Server: " + inputLine);
-                    break;
-                }
+                break;
             }
         }
+        socket.close();
     }
 }
