@@ -32,12 +32,13 @@ public class Protocol {
 
     public String input(String input) {
 
+        System.out.println(reponse.toString());
         if (input == null)
             return "Que onda bro";
 
         if (reponse.containsKey(input.toUpperCase())) {
-
-            return reponse.get(input) + "\n";
+            System.out.println(reponse.get(input.toUpperCase()) + "\n");
+            return reponse.get(input.toUpperCase()) + "\n";
 
         } else {
             if (Math.random()*6 < 3)
