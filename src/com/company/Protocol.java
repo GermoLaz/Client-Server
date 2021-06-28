@@ -27,6 +27,7 @@ public class Protocol {
         reponse.put("HORA", GREEN + LocalTime.now().toString() + RESET);
         reponse.put("TRUCO", RED + "Quiero retruco" + RESET);
         reponse.put("ENVIDO", RED + "Flor por atrevido" + RESET);
+        reponse.put("CHAU", RED + "x" + RESET);
 
     }
 

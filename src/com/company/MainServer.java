@@ -1,4 +1,4 @@
-import com.company.Server;
+package com.company;
 
 import java.io.IOException;
 

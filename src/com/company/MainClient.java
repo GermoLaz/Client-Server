@@ -1,5 +1,6 @@
-import com.company.Client;
+package com.company;
 
+import com.company.Client;
 import java.io.IOException;
 import java.util.Scanner;
 

@@ -16,9 +16,9 @@ public class Client {
         this.portNumber = portNumber;
     }
     public void run() throws IOException {
-        Socket socket = new Socket(hostName, portNumber);
-        PrintWriter out = new PrintWriter(socket.getOutputStream(), true);
-        BufferedReader in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
+        Socket serverSocket = new Socket(hostName, portNumber);
+        PrintWriter out = new PrintWriter(serverSocket.getOutputStream(), true);
+        BufferedReader in = new BufferedReader(new InputStreamReader(serverSocket.getInputStream()));
         BufferedReader systemIn = new BufferedReader(new InputStreamReader(System.in));
 
         String inputLine, outputLine;
@@ -31,12 +31,12 @@ public class Client {
                 out.println(outputLine);
             }
 
-            if (outputLine.equals("x")) {
+            if (outputLine.equals("x") || inputLine.equals("x")) {
                 inputLine = in.readLine();
                 System.out.println("\u001B[31mServidor >>> " + inputLine);
                 break;
             }
         }
-        socket.close();
+        serverSocket.close();
     }
 }
