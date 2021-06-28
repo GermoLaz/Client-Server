@@ -32,19 +32,19 @@ public class Protocol {
 
     public String input(String input) {
 
-        System.out.println(reponse.toString());
         if (input == null)
-            return "Que onda bro";
+            return CYAN+"Bienvenido " +PURPLE +"al "+YELLOW +"Dino"+ GREEN+"Server "+RED +"3.4 "+ YELLOW +"con "+ PURPLE +"TURBO"+RESET;
 
+        if(input.toUpperCase().equals("X"))
+            return YELLOW+"La Conexión se va a cerrar, Gracias por usar DinoServer!";
         if (reponse.containsKey(input.toUpperCase())) {
-            System.out.println(reponse.get(input.toUpperCase()) + "\n");
-            return reponse.get(input.toUpperCase()) + "\n";
+            return reponse.get(input.toUpperCase());
 
         } else {
             if (Math.random()*6 < 3)
-                return "German no fue tan inteligente como programar este escenario" + "\n";
+                return "German no fue tan inteligente como programar este escenario";
             else
-                return "Julian no fue tan inteligente como programar este escenario" + "\n";
+                return "Julian no fue tan inteligente como programar este escenario";
         }
     }
 }

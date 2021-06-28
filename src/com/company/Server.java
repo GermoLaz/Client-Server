@@ -34,10 +34,13 @@ public class Server {
                         Protocol protocol = new Protocol();
                         outputLine = protocol.input(null);//-> recibo un string y devuelvo un string
                         out.println(outputLine);
+                        System.out.println("\u001B[31mServidor >>> "+ outputLine);
 
                         while ((inputLine = in.readLine()) != null) {
+                            System.out.println("\u001B[32mCliente >>>\u001B[0m"+ inputLine);
                             outputLine = protocol.input(inputLine);
                             out.println(outputLine);
+                            System.out.println("\u001B[31mServidor >>> "+ outputLine);
                             if (inputLine.equals("x") || outputLine.equals("x")){
 
                                 break;

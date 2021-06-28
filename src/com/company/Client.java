@@ -24,7 +24,7 @@ public class Client {
         String inputLine, outputLine;
 
         while ((inputLine = in.readLine()) != null) {
-            System.out.println("Server: " + inputLine);
+            System.out.println("\u001B[31mServidor >>> " + inputLine);
             outputLine = systemIn.readLine();
 
             if (outputLine != null) {
@@ -33,7 +33,7 @@ public class Client {
 
             if (outputLine.equals("x")) {
                 inputLine = in.readLine();
-                System.out.println("Server: " + inputLine);
+                System.out.println("\u001B[31mServidor >>> " + inputLine);
                 break;
             }
         }
